@@ -1,9 +1,8 @@
 from flask import Flask
+from grafityGet import grafity_bp
 
 app = Flask(__name__)
 
-@app.route("/", methods=['GET'])
-def home():
-    return '<h1>First Flask App</h1>'
+app.register_blueprint(grafity_bp)
 
 if __name__=='__main':app.run()
