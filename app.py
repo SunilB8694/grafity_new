@@ -7,4 +7,4 @@ app = Flask(__name__)
 app.register_blueprint(grafity_bp)
 app.register_blueprint(grafitymain_bp)
 
-if __name__=='__main':app.run()
+if __name__=='__main__':app.run()

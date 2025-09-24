@@ -12,7 +12,8 @@ import asyncio
 from dotenv import load_dotenv
 from pydantic_ai import Agent, RunContext
 from pydantic_ai import Agent, RunContext
-from pydantic_ai.models.openai import OpenAIChatModel
+# from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.openai import OpenAIProvider
 from graphiti_core import Graphiti
 from graphiti_core.nodes import EpisodeType
@@ -35,7 +36,7 @@ class GraphitiDependencies:
  
 def get_model():
     model_choice = os.getenv('MODEL_CHOICE', 'gpt-4.1-mini')
-    return OpenAIChatModel(model_choice, provider=OpenAIProvider(api_key=api_key))
+    return OpenAIModel(model_choice, provider=OpenAIProvider(api_key=api_key))
  
 graphiti_agent = Agent(
     get_model(),
